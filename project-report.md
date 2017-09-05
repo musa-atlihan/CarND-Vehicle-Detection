@@ -16,3 +16,32 @@ A car is cropped out from the test image with the name [test1](./test_images/tes
 
 As can be seen from the images, a 8x8 pixels of cell size seems convenient to get an acceptable representation of the car. Thus, a 8x8 cell size will be taken as the default value.
 
+## The Dataset
+
+The dataset provided for the project is a combination of datasets from various sources. These sources are [GTI vehicle image database](http://www.gti.ssr.upm.es/data/Vehicle_database.html) (GTI), [KITTI vision benchmark suite](http://www.cvlibs.net/datasets/kitti/) and extra images extracted from the [project video](./project_video.mp4). The dataset has two classes of images with the labels *vehicle* and *non-vehicle*. The number of images with the *vehicle* label and their sources can be seen below. The sets of *GTI Far*, *GTI left*, *GTI Right* and *GTI MidClose* are from the same source GTI with different viewpoints. Together with the *KITTI* examples they constitute the set of *vehicle* images.
+
+![vehicle image numbers](./images/vehicle-sets.png)
+
+In the images below, some of the examples are given from *vehicle* sources.
+
+![gti far set](./images/gti_far.png)
+![gti right set](./images/gti_right.png)
+![gti left set](./images/gti_left.png)
+![gti midclose set](./images/gti_midclose.png)
+![gti kitti set](./images/gti_kitti.png)
+
+The *non-vehicle* images are taken from GTI with extra captured images from the project video. The number of examples for each source is given below.
+
+![non-vehicle image numbers](./images/non-vehicle-sets.png)
+
+In the images below, some of the examples are given from *non-vehicle* sources.
+
+![gti non vehicle set](./images/non_vehicle_gti.png)
+![extras non vehicle set](./images/non_vehicle_extras.png)
+
+To check the balance between *vehicle* and *non-vehicle* classes the figure of total number of examples for each class is given below.
+
+![vehicle non-vehicle image numbers](./n-classes.png)
+
+As can be seen from the figure, the classes of the dataset seem to be roughly balanced, thus no augmentation will be applied.
+
