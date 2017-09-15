@@ -43,5 +43,9 @@ To check the balance between *vehicle* and *non-vehicle* classes the figure of t
 
 ![vehicle non-vehicle image numbers](./n-classes.png)
 
-As can be seen from the figure, the classes of the dataset seem to be roughly balanced, thus no augmentation will be applied.
+As can be seen from the figure, the classes of the dataset seem to be roughly balanced, thus no augmentation will be applied for balancing.
 
+
+## Feature Exploration
+
+There are several ways to extract the HOG features. Most important feature extracting parameters are `pixels per cell`, `cells per block` and the `number of orientation bins`. Pixels for each cell (`pixels per cell`) defines the number of pixels in cells, in each cell the gradient orientations are computed and the directions are grouped into orientation bins (`number of orientation bins`). It is convenient to choose the number of bins between 4 to 9 ([Navneet Dalal and Bill Triggs, 2005](http://ieeexplore.ieee.org/document/1467360/), and thus, the default is set to nine for the number of orientation bins. However, roughly defining the pixel number for each cell can be misleading. The below images demontrates how a car image is represented for different number of pixels in each cell. The magnitudes of the orientations in each cell becomes higher as the number of pixels increases, however an estimation for the number is not convenient for any distribution, thus, various pixel numbers are chosen to exract HOD features for different datasets. 
