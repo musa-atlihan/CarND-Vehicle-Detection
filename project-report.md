@@ -110,6 +110,7 @@ There are several ways to extract the HOG features. Most important feature extra
 | 24      | HSV           | No        | 16x16           | 2x2             | 9    | 4000     | 0.980    |
 
 \* Hist eqz: Histogram equalization is applied or not.
+
 \*\* Size: total number of examples in a dataset. All of the sub-datasets have 2000 vehicle examples and 2000 non-vehicle examples.
 
 As can be seen from the table, histogram equalization is an important factor for higher accuracies and features of 16x16 cell sizes and 2x2 blocks perform best in GRAY and RGB color spaces. For GRAY and RGB color spaces, the two best performing features can be seen in bold characters from the above table. For these best performing two datasets, a further [exploration](./feature-exploration.ipynb#Further-exploration) with larger block sizes are also performed and the test accuracy of each dataset is given in the table below.
