@@ -56,9 +56,9 @@ And some of the examples from *non-vehicle* sources are given below.
 
 ![extras non vehicle set](./images/non_vehicle_extras.png)
 
-To check the balance between *vehicle* and *non-vehicle* classes the total number of examples for each class is given below.
+In order to check the balance between *vehicle* and *non-vehicle* classes the total number of examples for each class is given below.
 
-![vehicle non-vehicle image numbers](./n-classes.png)
+![vehicle non-vehicle image numbers](./images/n-classes.png)
 
 As can be seen from the figure, the classes of the dataset seem to be roughly balanced, thus no augmentation will be applied for balancing.
 
