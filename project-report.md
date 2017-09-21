@@ -178,6 +178,8 @@ The car finding pipeline mentioned above is tested on the project video. The fin
 
 ![false positives in video](./images/false-positives-video.gif)
 
+This output video can be reached [here](./output_project_video.mp4).
+
 False positives appear mostly when there is a tree, traffic sign, shadow or an oncoming car. In order to overcome this problem, false positive mining is applied. On the left side of the video, where there is known to be no cars to detect, a region of interest selected to [run the model and collect](./mine-false-positive-data.ipynb) the detections which are known to be all false positives. An example for this region is given below.
 
 ![false positive region](./images/false-positive-region.png)
@@ -200,15 +202,17 @@ And some augmentation examples on the false positives are given below.
 
 ## Final Video
 
-After false posivite mining, the same model trained with the final augmented dataset and used to detect the vehicles in the project video. For the left side of the video, false positive detection rate dropped considerably (e.g. the false positive detection at the beginning of the video is lost). To generate the final video, the final model used with the pipeline for detection. In addition, since the project videos are the same with the previous [advanged lane detection project](https://github.com/wphw/CarND-Advanced-Lane-Lines), both pipelines are used together to output the final video by detecting the lane and the vehicles together. For the full result please follow [this youtube link]().
+After false posivite mining, the same model trained with the final augmented dataset and used to detect the vehicles in the project video. For the left side of the video, false positive detection rate dropped, however not entirely. In order to generate the final video, the final model used with the pipeline for detection. In addition, since the project video is the same with the previous video of [advanged lane detection project](https://github.com/wphw/CarND-Advanced-Lane-Lines), both pipelines are used together to output the final video by detecting the lane and the vehicles together. For the full result please follow [this youtube link](https://youtu.be/Nkmw3uwHXtc).
 
 
-[![final video result](./images/final-video.gif)]()
+[![final video result](./images/final-video.gif)](https://youtu.be/Nkmw3uwHXtc)
 
 
 ## Discussions and Possible Improvements
 
 Using Hog features, it is possible to reach very high accuracies. And since there are too many overlapping sliding windows to search an image for detection and localization problems, reducing the false positives by reaching low error rates becomes important. However, extracting HOG features is a computationally expensive process. In this project, despite computing the whole HOG features at once, a single scale overlapping sliding windows approach on a region of interest with 1280x380 pixels in size took about 20 minutes on an ASUS Intel Core i7 notebook for a 50 seconds video (about 1.1 seconds per iteration). Thus, this approach does not seem to offer a sufficient solution for real time applications.
+
+The final model has a test accuracy above %99, however, there is still considerable false positive observation rate which is an important matter for an autonomous driving project where these false predictions may cause tragic incidents. Since Hog feature extraction is an expensive process, there is a trade-off between reliability (making the model more confident by increasing the number of sliding windows) and speed.
 
 In addition, exctracting true features for any specific datasets needs extra work and efford to get a reliable model (e.g. a model with less false positives). Thus, using convolutional neural networks can be a better choice, since these models extract their features by optimizing convolutional layers.
 
