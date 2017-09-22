@@ -62,6 +62,8 @@ In order to check the balance between *vehicle* and *non-vehicle* classes the to
 
 As can be seen from the figure, the classes of the dataset seem to be roughly balanced, thus no augmentation will be applied for balancing.
 
+Dataset is available for download [here](https://drive.google.com/file/d/0B8c3GUF4ZQ-_OUtNX2tORzVzRU0/view).
+
 ## Support Vector Machines
 
 Support vector machine model is chosen as the classifier for the project.
