@@ -126,7 +126,7 @@ As can be seen from the table, histogram equalization is an important factor for
 | 7       | RGB           | Yes       | 16x16           | 4x4             | 9    | 4000     | 0.984    |
 | 8       | RGB           | No        | 16x16           | 4x4             | 9    | 4000     | 0.983    |
 
-No dramatic increace in accuracies is observed for block sizes of 3x3 and 4x4. Since increasing the block size is an expensive operation, only the best performing two datasets of 2x2 block sizes (highlighted in bold characters in the first table) are chosen and explored on the datasets of full sizes, then the features of the best performing dataset is chosen to be the final dataset for the project.
+No dramatic increase in accuracies is observed for block sizes of 3x3 and 4x4. Since increasing the block size is an expensive operation, only the best performing two datasets of 2x2 block sizes (highlighted in bold characters in the first table) are chosen and explored on the datasets of full sizes, then the features of the best performing dataset is chosen to be the final dataset for the project.
 
 
 ### Final features and the training
