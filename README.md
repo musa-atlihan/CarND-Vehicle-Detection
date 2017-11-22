@@ -146,7 +146,7 @@ Only the best performing features (features of dataset 3) are chosen as the feat
 
 ![final test](./images/final-datasets.png)
 
-As can be seen from the figure, dataset 3 performs best (%0.991 test accuracy). As a result, dataset 3 features are [used for training](./train-model-with-best-dataset.ipynb) by using the SVM model with the best model parameters, then this final model is used to detect vehicles in the video stream of the project.
+As can be seen from the figure, dataset 3 performs best (99.1% test accuracy). As a result, dataset 3 features are [used for training](./train-model-with-best-dataset.ipynb) by using the SVM model with the best model parameters, then this final model is used to detect vehicles in the video stream of the project.
 
 ## Detecting Vehicles with a Sliding Windows Search
 
@@ -214,7 +214,7 @@ After false posivite mining, the same model trained with the final augmented dat
 
 Using Hog features, it is possible to reach very high accuracies. And since there are too many overlapping sliding windows to search an image for detection and localization problems, reducing the false positives by reaching low error rates becomes important. However, extracting HOG features is a computationally expensive process. In this project, despite computing the whole HOG features at once, a single scale overlapping sliding windows approach on a region of interest with 1280x380 pixels in size took about 20 minutes on an ASUS Intel Core i7 notebook for a 50 seconds video (about 1.1 seconds per iteration). Thus, this approach does not seem to offer a sufficient solution for real time applications.
 
-The final model has a test accuracy above %99, however, there is still considerable false positive observation rate which is an important matter for an autonomous driving project where these false predictions may cause tragic incidents. Since Hog feature extraction is an expensive process, there is a trade-off between reliability (making the model more confident by increasing the number of sliding windows) and speed.
+The final model has a test accuracy above 99%, however, there is still considerable false positive observation rate which is an important matter for an autonomous driving project where these false predictions may cause tragic incidents. Since Hog feature extraction is an expensive process, there is a trade-off between reliability (making the model more confident by increasing the number of sliding windows) and speed.
 
 In addition, exctracting true features for any specific datasets needs extra work and efford to get a reliable model (e.g. a model with less false positives). Thus, using convolutional neural networks can be a better choice, since these models extract their features by optimizing convolutional layers.
 
